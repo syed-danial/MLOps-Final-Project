@@ -1,0 +1,8 @@
+FROM python:3.9
+WORKDIR /app
+COPY project.py
+RUN pip install numpy pandas scikit-learn
+EXPOSE 4231
+CMD["python", "project.py"]
+docker build -t my-python-project .
+docker run my-python-project
